@@ -4,5 +4,7 @@
 node {
     stage "Create build output"
     stage "Create build output2"
-    
+    stage "Execute Powershell"
+        bat "powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command \"\$ErrorActionPreference='Stop';[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$psCmd;EXIT \$global:LastExitCode\""
+
 }
