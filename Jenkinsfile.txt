@@ -2,10 +2,18 @@
 
 // This shows a simple example of how to archive the build output artifacts.
 node {
-    stage "StageName1"
-    stage "Execute Powershell"
+    stage "git checkout"
+    stage "dotnet restore"
+    stage "unit tests"
+    stage "api transformations"
+    stage "dotnet publish"
+    stage "zip"
+    stage "deploy"
+    stage "NEW update target server"
         String cmdletToRun = "Get-Process";
         bat "powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command \"\$ErrorActionPreference='Stop';[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$cmdletToRun;EXIT \$global:LastExitCode\""
-    stage "StageName3"
+    stage "Test Automation"
+    stage "Web UI Tests"
+
 
 }
